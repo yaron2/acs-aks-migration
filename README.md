@@ -166,7 +166,7 @@ If you need to peer your vnet with other vnets or establish a S2S VPN, you need 
 
 ### Network policies and plugins
 
-AKS does not currently network policies such as Calico and Cilium.
+AKS does not currently support network policies such as Calico and Cilium.
 If you require that pods in your cluster can only be accessed by authorized pods, that might be an issue.
 
 Note that you can also use the NetworkPolicy resource to control traffic between pods in a cluster.
