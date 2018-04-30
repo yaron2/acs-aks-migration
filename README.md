@@ -171,7 +171,7 @@ If you require that pods in your cluster can only be accessed by authorized pods
 
 Note that you can also use the NetworkPolicy resource to control traffic between pods in a cluster.
 
-AKS does not currently support the Azure CNI, so if have a scenario that requires pods to communicate to to VMs in peered VNETs or on-premises networks over ExpressRoute and VPNs and vice versa and you are not able to mirror the routes, this may be a point to re-consider if AKS currently fits your scenario.
+AKS does not currently support the Azure CNI, so if have a scenario that requires pods to communicate with VMs in peered VNETs or on-premises networks over ExpressRoute and VPNs and vice versa and you are not able to mirror the routes, this may be a point to re-consider if AKS currently fits your scenario.
 
 For more information on container networking, see [this](https://docs.microsoft.com/en-us/azure/virtual-network/container-networking) link.
 
