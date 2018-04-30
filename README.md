@@ -181,6 +181,6 @@ ACS and ACS-Engine both have custom implementations of auto-scaling, such as the
 
 Starting from Kubernetes 1.10, ACS-Engine has [autoscale support](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/azure/README.md) both VMSS and VMs.
 
-AKS does have support in cluster-autoscaler as of now, but there's an [issue](https://github.com/kubernetes/autoscaler/issues/753) you can track here for progress.
+AKS doesn't have support in cluster-autoscaler as of now, but there's an [issue](https://github.com/kubernetes/autoscaler/issues/753) you can track here for progress.
 
 A standalone implementation for autoscaling AKS can be found [here](https://github.com/yaron2/aks-autoscaler).
