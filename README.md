@@ -18,7 +18,7 @@ This document will focus on a high level feature comparison between ACS and ACS-
 Out of scope are:
 
 * AKS Roadmap References
-* Live, realtime migration of stateful workloads
+* Zero downtime migration of stateful workloads
 * AKS Support and SLA differences from ACS
 
 ## Overview
@@ -67,6 +67,8 @@ For detailed information on using Jenkins with AKS, see [here](https://azure.mic
 ### Stateful migration
 
 Migrating stateful workloads is trickier as they require Azure infrastructure operations such as moving the data between disks as well as the corresponding Kubernetes resources.
+
+Assume a stateful migration will create a situation where some data will remain in the old cluster and will need to be synced after the "failover" to the active cluster occurs.
 
 AKS supports Managed Disks only, so any migration of Unmanaged Disks to AKS must involve a conversion of the VHDs to Managed Disks.
 
