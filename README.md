@@ -26,7 +26,7 @@ Out of scope are:
 AKS is still in preview, and does not currently support all the features of ACS and ACS-Engine.
 As ACS-Engine is the building block for both ACS and AKS, you can expect certain features from ACS-Engine to move to AKS with time.
 
-Before migrating to AKS, please familiarize yourself with the following [AKS FAQ] (https://docs.microsoft.com/en-us/azure/aks/faq).
+Before migrating to AKS, please familiarize yourself with the following [AKS FAQ](https://docs.microsoft.com/en-us/azure/aks/faq).
 
 ### Feature comparison overview
 
@@ -61,7 +61,7 @@ If you have a CI/CD pipeline in place such as Jenkins or VSTS, you can update yo
 Example:
 Code Repository --> CI/CD Pipeline --> Container Registry --> CI/CD Pipeline --> AKS
 
-For detailed information on using Jenkins with AKS, see [here] (https://azure.microsoft.com/en-us/solutions/architecture/container-cicd-using-jenkins-and-kubernetes-on-azure-container-service/)
+For detailed information on using Jenkins with AKS, see [here](https://azure.microsoft.com/en-us/solutions/architecture/container-cicd-using-jenkins-and-kubernetes-on-azure-container-service/)
 
 
 ### Stateful migration
@@ -70,7 +70,7 @@ Migrating stateful workloads is trickier as they require Azure infrastructure op
 
 AKS supports Managed Disks only, so any migration of Unmanaged Disks to AKS must involve a conversion of the VHDs to Managed Disks.
 
-There is an [azure kube cli extension] (https://github.com/yaron2/azure-kube-cli) that helps automate all the steps below.
+There is an [azure kube cli extension](https://github.com/yaron2/azure-kube-cli) that helps automate all the steps below.
 
 #### Non Managed Disk to Managed Disk (Same Region)
 
@@ -171,14 +171,14 @@ Note that you can also use the NetworkPolicy resource to control traffic between
 
 AKS does not currently support the Azure CNI, so if have a scenario that requires pods to communicate to to VMs in peered VNETs or on-premises networks over ExpressRoute and VPNs and vice versa and you are not able to mirror the routes, this may be a point to re-consider if AKS currently fits your scenario.
 
-For more information on container networking, see [this] (https://docs.microsoft.com/en-us/azure/virtual-network/container-networking) link.
+For more information on container networking, see [this](https://docs.microsoft.com/en-us/azure/virtual-network/container-networking) link.
 
 ### Autoscale
 
-ACS and ACS-Engine both have custom implementations of auto-scaling, such as the [acs-engine-autoscaler] (https://github.com/wbuchwalter/Kubernetes-acs-engine-autoscaler) and [ACS autoscaler] (https://github.com/kim0/Kubernetes-acs-autoscaler)
+ACS and ACS-Engine both have custom implementations of auto-scaling, such as the [acs-engine-autoscaler](https://github.com/wbuchwalter/Kubernetes-acs-engine-autoscaler) and [ACS autoscaler](https://github.com/kim0/Kubernetes-acs-autoscaler)
 
-Starting from Kubernetes 1.10, ACS-Engine has [autoscale support] (https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/azure/README.md) both VMSS and VMs.
+Starting from Kubernetes 1.10, ACS-Engine has [autoscale support](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/azure/README.md) both VMSS and VMs.
 
-AKS does have support in cluster-autoscaler as of now, but there's an [issue] (https://github.com/kubernetes/autoscaler/issues/753) you can track here for progress.
+AKS does have support in cluster-autoscaler as of now, but there's an [issue](https://github.com/kubernetes/autoscaler/issues/753) you can track here for progress.
 
-A standalone implementation for autoscaling AKS can be found [here] (https://github.com/yaron2/aks-autoscaler)
+A standalone implementation for autoscaling AKS can be found [here](https://github.com/yaron2/aks-autoscaler)
