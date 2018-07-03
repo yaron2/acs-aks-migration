@@ -2,7 +2,7 @@
 
  A guide for the migration of ACS (Azure Container Service, Unmanaged) / ACS-Engine workloads to AKS (Azure Container Service, Managed).
 
- *This is a living document, currently up to date as of May 1st, 2018.*
+ *This is a living document, currently up to date as of July 3rd, 2018.*
 
 ## Purpose and motivation
 
@@ -38,11 +38,11 @@ Managed Masters | X | X | V
 Automated Upgrades | X | X | V
 Pay for | Masters + Nodes | Masters + Nodes | Nodes 
 Network Policies        | Calico, Cilium         | X      |   X |
-Network Plugins       | Kubenet, Azure CNI     | Kubenet      |    Kubenet |
-Custom VNET | V | V (In preview, selected regions) | X
+Network Plugins       | Kubenet, Azure CNI     | Kubenet      |    Kubenet, Azure CNI |
+Custom VNET | V | V (In preview, selected regions) | V
 Private Cluster (No Public IPs) | V | X | X
 KeyVault Encryption (etcd) | V | X | X
-RBAC | V | X | X
+RBAC | V | X | V
 Multiple Node Pools | V | X | X
 Windows Nodes | V | V | X
 Operating Systems | Ubuntu, CoreOS | Ubuntu | Ubuntu
@@ -156,13 +156,6 @@ Example flow:
 1) Migrate resources from old cluster to new cluster
 2) Go to your DNS registar and point your DNS addresses to the corresponding IP addresses in the new cluster
 3) Use ```kubectl drain $NODENAME``` on the nodes of your old cluster to allow for a graceful termination of pods on a node and then marking it as unschedulable
-
-### VNET support
-
-AKS doesn't currently support a custom VNET deployment.
-AKS will create one VNET for the agnets with a 10.0.0.0/8 address range, and one subnet with a 10.240.0.0/16 range.
-
-If you need to peer your vnet with other vnets or establish a S2S VPN, you need to take this default range into consideration as network overlap may occur.
 
 ### Network policies and plugins
 
